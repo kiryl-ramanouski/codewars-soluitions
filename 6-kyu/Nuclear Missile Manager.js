@@ -1,8 +1,7 @@
-async function antiOptimizeAsync(task) {
-  const timeStart = new Date();
-  const result = await task();
-
-  return new Promise((resolve, reject) => {
-    setTimeout(() => resolve(result), 11000 - (new Date() - timeStart));
-  });
+function launchAll(launchMissile) {
+  for(let i = 0; i < 5; i++) {
+    setTimeout(function() {
+      launchMissile(i);
+    }, i * 1000);
+  }
 }
